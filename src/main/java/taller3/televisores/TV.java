@@ -70,25 +70,25 @@ public class TV {
 	}
 	public void canalUp () {
 		//condiciones para subir de canal
-		if (canal < 121 && estado) {
+		if ((canal != 120) && (estado)) {
 			canal = canal+1;
 		}
 	}
 	public void canalDown() {
 		//condiciones para bajar de canal
-		if (canal > 1 && estado) {
+		if ((canal != 1) && (estado)) {
 			canal = canal-1;
 		}
 	}
 	public void volumenUp () {
 		//condiciones para subir el volumen
-		if (volumen < 8 && estado) {
+		if ((volumen != 7) && (estado)) {
 			volumen = volumen+1;
 		}
 	}
 	public void volumenDown() {
 		//condiciones para bajar el volumen
-		if (volumen > 0 && estado) {
+		if ((volumen != 0) && (estado)) {
 			volumen = volumen-1;
 		}
 	}	
