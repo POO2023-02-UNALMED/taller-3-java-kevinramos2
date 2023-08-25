@@ -18,11 +18,11 @@ public class TV {
 		numTV++;
 	}
 	//set y get de marca,canal,precio,volumen y control.
-	public void setMarca(Marca marca) {
-		this.marca = marca;
-	}
 	public Marca getMarca() {
 		return marca;
+	}
+	public void setMarca(Marca marca) {
+		this.marca = marca;
 	}
 	public int getPrecio () {
 		return precio;
@@ -40,7 +40,7 @@ public class TV {
 		return canal;
 	}
 	public void setCanal(int canal) {
-		if (canal >= 1 && canal<=120) {
+		if (canal >= 1 && canal <= 120) {
 			this.canal = canal;
 		}	
 	}
@@ -48,7 +48,7 @@ public class TV {
 		return volumen;
 	}
 	public void setVolumen(int volumen) {
-		if (volumen >= 0 && volumen <= 7) {
+		if (volumen >= 0 && volumen <= 7 && estado) {
 			this.volumen = volumen;
 		}
 	}
@@ -67,9 +67,6 @@ public class TV {
 	}
 	public boolean getEstado() {
 		return estado;
-	}
-	public void setEstado(boolean estado) {
-		this.estado = estado;
 	}
 	public void canalUp () {
 		//condiciones para subir de canal
