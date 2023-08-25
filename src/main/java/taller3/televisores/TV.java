@@ -1,5 +1,92 @@
 package taller3.televisores;
 
 public class TV {
-
+	//atributos de la clase
+	private Marca marca;
+	private int canal = 1;
+	private int precio = 500;
+	private boolean estado;
+	private int volumen = 1;
+	private Control control;
+	//atributo de tipo clase
+	private static int numTV;
+	
+	//Constructor
+	public TV(Marca marca, boolean estado) {
+		this.marca = marca;
+		this.estado = estado;
+		numTV++;
+	}
+	//set y get de marca,canal,precio,volumen y control.
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+	public Marca getMarca() {
+		return marca;
+	}
+	public int getPrecio () {
+		return precio;
+	}
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	public Control getControl() {
+		return control;
+	}
+	public void setControl(Control control) {
+		this.control = control;
+	}
+	public int getCanal() {
+		return canal;
+	}
+	public void setCanal(int canal) {
+		if (canal >= 1 && canal<=120) {
+			this.canal = canal;
+		}	
+	}
+	public int getVolumen() {
+		return volumen;
+	}
+	public void setVolumen(int volumen) {
+		if (volumen >= 0 && volumen <= 7) {
+			this.volumen = volumen;
+		}
+	}
+	//metodos que el control deberá hacer uso
+	public void turnOn() {
+		this.estado = true;
+	}
+	public void turnOff () {
+		this.estado = false;
+	}
+	public boolean getEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	public void canalUp () {
+		//condiciones para subir de canal
+		if (canal < 121 && estado) {
+			canal = canal+1;
+		}
+	}
+	public void canalDown() {
+		//condiciones para bajar de canal
+		if (canal > 0 && estado) {
+			canal = canal-1;
+		}
+	}
+	public void volumenUp () {
+		//condiciones para subir el volumen
+		if (volumen < 8 && estado) {
+			volumen = volumen+1;
+		}
+	}
+	public void volumenDown() {
+		//condiciones para bajar el volumen
+		if (volumen >= 0 && estado) {
+			volumen = volumen-1;
+		}
+	}	
 }
