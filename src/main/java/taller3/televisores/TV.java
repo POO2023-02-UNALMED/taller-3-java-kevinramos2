@@ -52,6 +52,12 @@ public class TV {
 			this.volumen = volumen;
 		}
 	}
+	public static int getNumTV () {
+		return numTV;
+	}
+	public static void setNumTV (int numTV) {
+		TV.numTV = numTV;
+	}
 	//metodos que el control deberá hacer uso
 	public void turnOn() {
 		this.estado = true;
@@ -73,7 +79,7 @@ public class TV {
 	}
 	public void canalDown() {
 		//condiciones para bajar de canal
-		if (canal > 0 && estado) {
+		if (canal > 1 && estado) {
 			canal = canal-1;
 		}
 	}
@@ -85,7 +91,7 @@ public class TV {
 	}
 	public void volumenDown() {
 		//condiciones para bajar el volumen
-		if (volumen >= 0 && estado) {
+		if (volumen > 0 && estado) {
 			volumen = volumen-1;
 		}
 	}	
